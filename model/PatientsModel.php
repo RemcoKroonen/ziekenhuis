@@ -1,10 +1,10 @@
 <?php
 
-function getStudent($id) 
+function getPatients($id) 
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM students WHERE student_id = :id";
+	$sql = "SELECT * FROM patients WHERE student_id = :id";
 	$query = $db->prepare($sql);
 	$query->execute(array(
 		":id" => $id));
@@ -14,11 +14,11 @@ function getStudent($id)
 	return $query->fetch();
 }
 
-function getAllStudents() 
+function getAllPatients() 
 {
 	$db = openDatabaseConnection();
 
-	$sql = "SELECT * FROM students";
+	$sql = "SELECT * FROM patients";
 	$query = $db->prepare($sql);
 	$query->execute();
 

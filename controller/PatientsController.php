@@ -1,17 +1,17 @@
 <?php
 
-require(ROOT . "model/StudentModel.php");
+require(ROOT . "model/PatientsModel.php");
 
 function index()
 {
-	render("student/index", array(
-		'students' => getAllStudents()
+	render("Ziekenhuis/index", array(
+		'ziekenhuis' => getAllStudents()
 	));
 }
 
 function create()
 {
-	render("student/create");
+	render("Ziekenhuis/create");
 }
 
 function createSave()
@@ -21,12 +21,12 @@ function createSave()
 		exit();
 	}
 
-	header("Location:" . URL . "student/index");
+	header("Location:" . URL . "Ziekenhuis/index");
 }
 
 function edit($id)
 {
-	render("student/edit", array(
+	render("Ziekenhuis/edit", array(
 		'student' => getStudent($id)
 	));
 }
@@ -38,7 +38,7 @@ function editSave()
 		exit();
 	}
 
-	header("Location:" . URL . "student/index");
+	header("Location:" . URL . "Ziekenhuis/index");
 } 
 
 function delete($id)
@@ -48,5 +48,5 @@ function delete($id)
 		exit();
 	}
 
-	header("Location:" . URL . "student/index");
+	header("Location:" . URL . "Ziekenhuis/index");
 }
